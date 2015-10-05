@@ -1,0 +1,30 @@
+head
+  title.
+   RageFit
+body
+  div.container-fluid
+    div.navbar.navbar-default
+      div.container-fluid
+        div.navbar-header
+          span.navbar-brand RageFit
+        div.collapse.navbar-collapse
+          ul.nav.navbar-nav(role="tablist")
+            li(role="presentation")
+              a(href="#gain", aria-controls="gain", role="tab", data-toggle="tab") Gain rage
+            li(role="presentation")
+              a(href="#spend", aria-controls="spend", role="tab", data-toggle="tab") Spend rage
+            li(role="presentation")
+              a(href="#about", aria-controls="about", role="tab", data-toggle="tab") About
+    div.tab-content
+      div.fade.tab-pane.col-lg-4#gain(role="tabpanel")
+        p
+          a.btn.disabled.btn-lg(role="button") Rage points
+            span.badge 0
+          a#addrage.btn.btn-danger.btn-lg(role="button")
+            span.glyphicon.glyphicon-plus(aria-hidden="true")
+      div.fade.tab-pane.col-lg-4#spend(role="tabpanel")
+        p.
+          тут прогрессбар и кнопка минусов
+      div.fade.tab-pane.col-lg-4#about(role="tabpanel")
+        p.
+          RageFit - app to help you make yourself more mentally calm and physically strong

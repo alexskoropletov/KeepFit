@@ -1,0 +1,1 @@
+@RagePoints = new Mongo.Collection "rage"

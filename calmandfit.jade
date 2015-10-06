@@ -23,8 +23,15 @@ body
           a#addrage.btn.btn-danger.btn-lg(role="button")
             span.glyphicon.glyphicon-plus(aria-hidden="true")
       div.fade.tab-pane.col-lg-4#spend(role="tabpanel")
-        p.
-          тут прогрессбар и кнопка минусов
+        form.form-inline
+          div.form-group
+            label(for="selectLevel") Level
+            select#selectLevel.form-control
+              option(value="veryeasy") Very easy
+              option(value="easy") Easy
+              option(value="normal") Normal
+              option(value="hard") Hard
+              option(value="veryhard") Very hard
       div.fade.tab-pane.col-lg-4#about(role="tabpanel")
         p.
           RageFit - app to help you make yourself more mentally calm and physically strong

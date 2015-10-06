@@ -1,4 +1,5 @@
 $( ->
+  console.log getCurrentLevel()
   #menu tabs
   $(".navbar-nav a").click (e) ->
     e.preventDefault()
@@ -12,4 +13,8 @@ $( ->
     $(".badge").text getRage()
     $(".navbar-nav a:eq(0)").tab('show');
   setTimeout callback, 100
+  #level select
+  $("#selectLevel").click ->
+    level = $(this).val()
+    setCurrentLevel(level)
 )

@@ -1,28 +1,22 @@
 head
-  title.
-   RageFit
+  title RageFit
 body
   div.container-fluid
     div.navbar.navbar-default
       div.container-fluid
         div.navbar-header
           span.navbar-brand RageFit
-        div.collapse.navbar-collapse
-          ul.nav.navbar-nav(role="tablist")
-            li(role="presentation")
-              a(href="#gain", aria-controls="gain", role="tab", data-toggle="tab") Gain rage
-            li(role="presentation")
-              a(href="#spend", aria-controls="spend", role="tab", data-toggle="tab") Spend rage
-            li(role="presentation")
-              a(href="#about", aria-controls="about", role="tab", data-toggle="tab") About
-    div.tab-content
-      div.fade.tab-pane.col-lg-4#gain(role="tabpanel")
+    div.row
+      div.col-lg-4(role="tabpanel")
         p
           a.btn.disabled.btn-lg(role="button") Rage points
-            span.badge 0
-          a#addrage.btn.btn-danger.btn-lg(role="button")
-            span.glyphicon.glyphicon-plus(aria-hidden="true")
-      div.fade.tab-pane.col-lg-4#spend(role="tabpanel")
+            span.currentRage.badge 0
+          a#addrage.btn.btn-danger.btn-lg
+            span.glyphicon.glyphicon-plus
+    div.row
+      hr
+    div.row
+      div.col-lg-4(role="tabpanel")
         form.form-inline
           div.form-group
             label(for="selectLevel") Level
@@ -32,6 +26,15 @@ body
               option(value="normal") Normal
               option(value="hard") Hard
               option(value="veryhard") Very hard
-      div.fade.tab-pane.col-lg-4#about(role="tabpanel")
-        p.
-          RageFit - app to help you make yourself more mentally calm and physically strong
+          div.form-group
+            button.reduce.btn.btn-default(type="button") Push-ups
+              span#pushups.badge 0
+            button.reduce.btn.btn-default(type="button") Pull-ups
+              span#pullups.badge 0
+    div.row
+      hr
+    div.row
+      div.col-lg-4(role="tabpanel")
+        p RageFit - app to help you make yourself more mentally calm and physically strong.
+        p During the day every time you get angry - press "+" to gain a Rage point
+        p So in the evening you can burn down your Rage points with exercises!

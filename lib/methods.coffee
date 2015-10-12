@@ -3,40 +3,38 @@
     createdAt: new Date
   RagePoints.insert data
 
+
 @getRage = ->
   count = RagePoints.find {}
   count.count()
 
 @reduceRage = ->
   removeIt = (item) ->
-    item.remove
-  RagePoints.findOne {}, removeIt
+    if item
+      RagePoints.remove item._id
+  removeIt RagePoints.findOne {}
 
 @getCurrentLevel = ->
-  'veryeasy'
-#  Options.find {key: 'level'}, (err, option) ->
-#    console.log err
-#    console.log option
-#    if option
-#      option.value
-#    else
-#      defaultLevel =
-#        key: 'level'
-#        value: 'veryeasy'
-#      Options.insert defaultLevel, ->
-#        'veryeasy'
+  option = AppOptions.findOne {key: 'level'}
+  if option
+    option.value
+  else
+    defaultLevel =
+      key: 'level'
+      value: 'veryeasy'
+    AppOptions.insert defaultLevel, ->
+      'veryeasy'
 
 @setCurrentLevel = (level) ->
-  AppOptions.find {}, (err, app_options) ->
-    console.log app_options
+  option = AppOptions.findOne {key: 'level'}
+  if option
+    set =
+      value: level
+    AppOptions.update option._id, $set: set
     level
-#    if options
-#      option.level = level
-#      option.save (err) ->
-#        level
-#    else
-#  defaultLevel =
-#    key: 'level'
-#    value: level
-#  Options.insert defaultLevel, ->
-#    level
+  else
+    defaultLevel =
+      key: 'level'
+      value: level
+    AppOptions.insert defaultLevel, ->
+      level

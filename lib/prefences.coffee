@@ -1,4 +1,4 @@
-@MODES =
+  @MODES =
   veryeasy:
     pullup: 0.5
     pushup: 1

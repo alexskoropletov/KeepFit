@@ -2,7 +2,7 @@
   data =
     createdAt: new Date
   RagePoints.insert data
-
+  getRage()
 
 @getRage = ->
   count = RagePoints.find {}
@@ -13,6 +13,7 @@
     if item
       RagePoints.remove item._id
   removeIt RagePoints.findOne {}
+  getRage()
 
 @getCurrentLevel = ->
   option = AppOptions.findOne {key: 'level'}
@@ -24,6 +25,7 @@
       value: 'veryeasy'
     AppOptions.insert defaultLevel, ->
       'veryeasy'
+    'veryeasy'
 
 @setCurrentLevel = (level) ->
   option = AppOptions.findOne {key: 'level'}

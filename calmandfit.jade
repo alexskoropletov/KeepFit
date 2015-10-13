@@ -17,15 +17,11 @@ body
       hr
     div.row
       div.col-lg-4(role="tabpanel")
+        div.form-group
+          div#progress.progress
+            div#progress-bar.progress-bar(role="progressbar", aria-valuenow="60", aria-valuemin="0", aria-valuemax="100", style="width: 60%;").
+              Normal
         form.form-inline
-          div.form-group
-            label(for="selectLevel") Level
-            select#selectLevel.form-control
-              option(value="veryeasy") Very easy
-              option(value="easy") Easy
-              option(value="normal") Normal
-              option(value="hard") Hard
-              option(value="veryhard") Very hard
           div.form-group
             button.reduce.btn.btn-default(type="button") Push-ups
               span#pushups.badge 0
@@ -35,6 +31,6 @@ body
       hr
     div.row
       div.col-lg-4(role="tabpanel")
-        p RageFit - app to help you make yourself more mentally calm and physically strong.
+        //p RageFit - app to help you make yourself more mentally calm and physically strong.
         p During the day every time you get angry - press "+" to gain a Rage point
         p So in the evening you can burn down your Rage points with exercises!
